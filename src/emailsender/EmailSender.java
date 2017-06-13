@@ -48,6 +48,8 @@ public class EmailSender {
         Properties props = new Properties();
         props.put("mail.smtp.host", SMTP_HOST_NAME);
         props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
         Authenticator authenticator = new CredentialsAuthenticator();
         Session session = Session.getDefaultInstance(props, authenticator);
 
